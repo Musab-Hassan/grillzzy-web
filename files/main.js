@@ -1,4 +1,4 @@
-var SERVER_HOST = window.location.hostname;
+var SERVER_HOST = "";//window.location.hostname;
 
 $(document).ready(function() {
     M.navigation("#page-render", [
@@ -9,7 +9,6 @@ $(document).ready(function() {
       routers: [".n-link-home"],
       default: true,
       success: function(e) {
-        console.log(e.classList);
         if (e) {
           if (e.target.classList.contains("menu")) {
             $([document.documentElement, document.body]).animate({
