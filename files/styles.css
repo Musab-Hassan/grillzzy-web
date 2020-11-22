@@ -320,16 +320,15 @@ html, body {
 .document-content .menu-container .item-container .inline-container h1.item-title {
   font-family: "Pastel", sans-serif;
   font-weight: normal;
-  text-transform: uppercase;
   color: #4E4E4E;
   font-size: 4em;
 }
 
 .document-content .menu-container .item-container .inline-container h2.item-description {
-  font-family: "Pastel", sans-serif;
-  font-weight: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   color: #4E4E4E;
-  font-size: 2.4em;
+  font-size: 1.5em;
 }
 
 .document-content .location-container .store-container {
@@ -441,4 +440,26 @@ html, body {
   #footer-container .item-header {
     font-size: 3vw !important;
   }
+}
+
+#product-slider {
+  width: 400%;
+  height: 40vh;
+  overflow: hidden;
+  margin: 0 -10vh;
+}
+
+#product-slider .slider {
+  margin-left: 10vh;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+  -webkit-transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#product-slider .slider img {
+  border-radius: 1.5vh;
+  height: inherit;
+  width: auto;
+  display: inline-block;
+  margin-right: 2vh;
 }
