@@ -10,6 +10,7 @@ $(document).ready(function() {
       default: true,
       success: function(e) {
         slider();
+        expandMenu();
         if (e) {
           if (e.target.classList.contains("menu")) {
             $([document.documentElement, document.body]).animate({
@@ -65,4 +66,27 @@ function slider() {
     /*$("#product-slider .slider").css("transform", "translate: ")
     console.log("Calling moveSlider");*/
   }
+}
+
+function expandMenu() {
+  $(".menu-container .menu-list .expand-btn").click(function() {
+    
+    let listHeight = 0;
+    let expandList = $(this).closest('.menu-section-wrapper').children('.expandable-list')
+
+    $(expandList).children().each(function(){
+        listHeight = listHeight + $(this).outerHeight(true);
+    });
+
+    
+    if (expandList.hasClass("contract")) {
+      $(this).html("View All Varients and Details &uarr;");
+      expandList.removeClass("contract").addClass("expand");
+      expandList.css("height", listHeight + "px");
+    } else {
+      $(this).html("View All Varients and Details &darr;");
+      expandList.removeClass("expand").addClass("contract");
+      expandList.css("height", "0px");
+    }
+  })
 }

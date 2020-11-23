@@ -7,8 +7,10 @@ $c_backgroundGray: #212121
 $c_textGray: #4E4E4E
 $c_accentGrey: #7C7C7C
 $c_textLightGray: #616161
+$c_textPrimaryRed: #FE4A33
 
 $min-width: "850px"
+$mid-width: "1085px"
 
 *
     margin: 0
@@ -78,7 +80,6 @@ html,body
                         width: 32.5% !important
                         height: auto !important
                         margin: auto 0 !important
-            
 
 .header
     display: inline-block
@@ -255,39 +256,84 @@ html,body
     .menu-container
         margin-bottom: 7em
 
-        .item-container
-            margin-bottom: 2em
-            
+        .menu-list
+            margin-top: 10vh
+
+            .expandable-list
+                height: 0
+                overflow: hidden
+                transition: height 0.7s cubic-bezier(0.76, 0, 0.24, 1)
+                -webkit-transition: height 0.7s cubic-bezier(0.76, 0, 0.24, 1)
+
             @media screen and (max-width: $min-width)
-                .inline-container
+                .item-container
                     text-align: center
 
-                    .product-image
-                        height: auto !important
-                        width: 100%
-                        padding: 0
+                    .inline-container
+                        text-align: center
 
-            .inline-container
-                display:inline-block !important
-                margin: auto 0
-                vertical-align: middle;
+                        .product-image
+                            height: auto !important
+                            width: 100%
+                            padding: 0
 
-                .product-image
-                    height: 11em
-                    padding-right: 2em
-                    box-sizing: border-box
-                
-                h1.item-title
-                    font-family: "Pastel", sans-serif
-                    font-weight: normal
-                    color: $c_textGray
-                    font-size: 4em
-                
-                h2.item-description
+            .item-container
+                margin-bottom: 2em
+
+                .expand-btn
                     font-family: "Montserrat", sans-serif
-                    font-weight: 400
-                    color: $c_textGray
-                    font-size: 1.5em
+                    font-size: 1.2em
+                    text-transform: uppercase
+                    outline: none
+                    border: none
+                    font-weight: bold
+                    background-color: transparent
+                    color: $c_textPrimaryRed
+                    padding: 0.6em 0
+                    border-radius: 0.4em
+                    cursor: pointer
+
+                    &:hover
+                        text-decoration: underline
+
+                .inline-container
+                    display:inline-block !important
+                    margin: auto 0
+                    vertical-align: middle;
+
+                    .product-image
+                        height: 11em
+                        padding-right: 2em
+                        box-sizing: border-box
+                    
+                    h1.item-title
+                        font-family: "Pastel", sans-serif
+                        font-weight: normal
+                        color: $c_textGray
+                        font-size: 4em
+                    
+                    h1.item-subtitle
+                        font-family: "Pastel", sans-serif
+                        font-weight: normal
+                        color: $c_textLightGray
+                        font-size: 2.8em
+                    
+                    h2.item-description
+                        font-family: "Montserrat", sans-serif
+                        font-weight: 400
+                        color: $c_textGray
+                        font-size: 1.3em
+                        line-height: 150%
+                    
+        @media screen and (min-width: $mid-width)
+            .item-container
+                display: flex !important
+
+                *
+                    margin: auto 0
+                
+                .inline-container.text
+                    flex-grow: 1
                         
     .location-container
         .store-container
@@ -384,8 +430,13 @@ html,body
             font-size: 3vw !important
 
 
+@media screen and (max-width: $min-width)
+    #product-slider
+        width: 200vh
+        height: 50vw !important
+
 #product-slider
-    width: 400%
+    width: 500%
     box-sizing border-box
     height: 40vh
     overflow: hidden
