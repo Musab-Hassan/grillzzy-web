@@ -16,10 +16,6 @@ $(document).ready(function() {
             $([document.documentElement, document.body]).animate({
               scrollTop: $(".document-content .menu-container").offset().top
             }, 800);
-          } else if (e.target.classList.contains("av")) {
-            $([document.documentElement, document.body]).animate({
-              scrollTop: $(".document-content .location-container").offset().top
-            }, 800);
           }
         }
       }
@@ -38,6 +34,12 @@ $(document).ready(function() {
           }
         }
       }
+    },
+    {
+      id: "availability",
+      path: ["availability"],
+      src: SERVER_HOST + "/files/components/availability.html",
+      routers: [".n-link-availability"]
     }
   ]);
 });
