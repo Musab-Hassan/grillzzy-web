@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
 @font-face {
   font-family: Pastel;
   src: url(assets/Pastel.woff);
@@ -20,8 +20,12 @@ html, body {
   width: 100%;
   position: relative;
   background-color: #212121;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 #back-image-container .back-video {
@@ -39,48 +43,93 @@ html, body {
   z-index: 2;
 }
 
-#back-image-container .slider {
-  width: 100%;
-  height: 75vh;
+@media screen and (min-width: 850px) {
+  #back-image-container .title-align-wrapper {
+    width: 50% !important;
+  }
+}
+
+#back-image-container .title-align-wrapper {
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 5vw;
+  box-sizing: border-box;
+  margin: auto 0;
 }
 
-#back-image-container .slider .vertical-align {
-  margin: auto 5vw;
+#back-image-container .title-align-wrapper .card {
+  background-color: white;
+  padding: 2vw;
+  border-radius: 0.4em;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 2rem 0;
 }
 
-#back-image-container .slider .vertical-align .description {
+#back-image-container .title-align-wrapper .card * {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  color: #4E4E4E;
+}
+
+#back-image-container .title-align-wrapper .card .strong-header {
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+
+#back-image-container .title-align-wrapper .card .italic {
+  font-style: italic;
+  font-weight: 200 !important;
+}
+
+#back-image-container .title-align-wrapper .card .link-box {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  padding: 1.2vw;
+  background-color: white;
+  font-weight: 500;
+  line-height: 150%;
+  margin-bottom: 1rem;
+}
+
+#back-image-container .title-align-wrapper .card .link-box:hover {
+  background-color: #EEEEEE;
+}
+
+#back-image-container .title-align-wrapper .description {
   margin-left: 2em;
 }
 
 @media screen and (max-width: 850px) {
-  #back-image-container .slider .vertical-align .description {
+  #back-image-container .title-align-wrapper .description {
     margin-left: 5vw;
   }
 }
 
-#back-image-container .slider .vertical-align .header {
+#back-image-container .title-align-wrapper .header {
   margin-bottom: 7vh;
 }
 
-#back-image-container .slider .vertical-align .delivery-container {
+#back-image-container .title-align-wrapper .delivery-container {
   margin-top: 8em;
 }
 
-#back-image-container .slider .vertical-align .delivery-container img.delivery-service-img {
+#back-image-container .title-align-wrapper .delivery-container img.delivery-service-img {
   display: inline-block;
   height: 2.8em;
   margin: 0 2em;
 }
 
 @media screen and (max-width: 850px) {
-  #back-image-container .slider .vertical-align .delivery-container {
+  #back-image-container .title-align-wrapper .delivery-container {
     position: relative;
     margin-top: 10vh !important;
   }
-  #back-image-container .slider .vertical-align .delivery-container img.delivery-service-img {
+  #back-image-container .title-align-wrapper .delivery-container img.delivery-service-img {
     width: 32.5% !important;
     height: auto !important;
     margin: auto 0 !important;
@@ -381,22 +430,6 @@ html, body {
   .document-content .menu-container .item-container .inline-container.text {
     flex-grow: 1;
   }
-}
-
-.document-content .location-container .store-container {
-  display: block;
-}
-
-.document-content .location-container .store-container ul {
-  list-style-type: none;
-}
-
-.document-content .location-container .store-container ul li.store-item {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-  line-height: 180%;
-  text-transform: uppercase;
-  color: #4E4E4E;
 }
 
 .document-content .location-container .delivery-container {
