@@ -147,6 +147,45 @@ html, body {
   }
 }
 
+#fixed-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 2rem;
+}
+
+#fixed-container .button-wrapper .social-btn {
+  border-radius: 100%;
+  padding: 1.2rem;
+  background-color: black;
+  display: inline-block;
+  margin: 0 0.3rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  cursor: pointer;
+  transition: 0.3s ease transform;
+}
+
+#fixed-container .button-wrapper .social-btn:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+#fixed-container .button-wrapper .social-btn.fb {
+  background-color: #3b5998;
+}
+
+#fixed-container .button-wrapper .social-btn.ig {
+  background: #c13584;
+  background: linear-gradient(90deg, #c13584 0%, #fd1d1d 100%);
+}
+
+#fixed-container .button-wrapper .social-btn img {
+  height: inherit;
+}
+
 .nav-container {
   display: flex;
   flex-direction: column;
