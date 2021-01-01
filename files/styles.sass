@@ -341,7 +341,8 @@ html,body
 
 .document-content
     width: 100%
-    background-image: url("assets/texture.png")
+    //background-image: url("assets/texture.png")
+    background-color: white
     background-size: 100%
     background-repeat: repeat
     box-sizing: border-box
@@ -355,6 +356,7 @@ html,body
 
         .menu-list
             margin-top: 10vh
+            background-color: white
 
             .expandable-list
                 height: 0
@@ -376,6 +378,16 @@ html,body
 
             .item-container
                 margin-bottom: 2em
+                border-radius: 1em
+                box-sizing: border-box
+                box-shadow: 0px 5px 20px rgba(0,0,0,0.15)
+                padding: 7vh 3vh
+                margin-bottom: 3vh
+                cursor: pointer
+                transition: 0.4s ease background-color
+
+                &:hover
+                    background-color: rgba(0,0,0,0.05)
 
                 .expand-btn
                     font-family: "Montserrat", sans-serif
@@ -389,9 +401,6 @@ html,body
                     padding: 0.6em 0
                     border-radius: 0.4em
                     cursor: pointer
-
-                    &:hover
-                        text-decoration: underline
 
                 .inline-container
                     display:inline-block !important

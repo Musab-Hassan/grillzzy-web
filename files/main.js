@@ -71,9 +71,10 @@ function slider() {
 }
 
 function expandMenu() {
-  $(".menu-container .menu-list .expand-btn").click(function() {
+  $(".menu-container .menu-list .expand-container").click(function() {
     
     let listHeight = 0;
+    let arrowElement = this.querySelector(".inline-container.text .expand-btn p");
     let expandList = $(this).closest('.menu-section-wrapper').children('.expandable-list')
 
     $(expandList).children().each(function(){
@@ -82,11 +83,11 @@ function expandMenu() {
 
     
     if (expandList.hasClass("contract")) {
-      $(this).html("View All Varients and Details &uarr;");
+      $(arrowElement).html("&uarr;");
       expandList.removeClass("contract").addClass("expand");
       expandList.css("height", listHeight + "px");
     } else {
-      $(this).html("View All Varients and Details &darr;");
+      $(arrowElement).html("&darr;");
       expandList.removeClass("expand").addClass("contract");
       expandList.css("height", "0px");
     }
