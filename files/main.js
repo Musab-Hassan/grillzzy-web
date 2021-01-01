@@ -6,7 +6,7 @@ $(document).ready(function() {
       id: "home",
       path: ["home"],
       src: SERVER_HOST + "/files/components/home.html",
-      routers: [".n-link-home"],
+      routers: [".n-link-home", ".brand-icon"],
       default: true,
       success: function(e) {
         slider();
