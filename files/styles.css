@@ -595,17 +595,14 @@ html, body {
 }
 
 #product-slider {
-  width: 500%;
+  width: 100%;
   height: 40vh;
   overflow: hidden;
-  margin: 0 -10vh;
 }
 
 #product-slider .slider {
-  margin-left: 10vh;
   height: 100%;
-  transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
-  -webkit-transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+  width: 1000vw;
 }
 
 #product-slider .slider img {

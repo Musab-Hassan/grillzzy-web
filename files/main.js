@@ -1,6 +1,7 @@
 var SERVER_HOST = window.location.hostname;
 
 $(document).ready(function() {
+  // Page navigation
   M.navigation("#page-render", [
     {
       id: "home",
@@ -45,32 +46,48 @@ $(document).ready(function() {
 });
 
 
+// Product image slider
 function slider() {
+
   let sliderContainer = $("#product-slider .slider");
   sliderContainer.data("activeSlide", "1");
   let children = sliderContainer.children("img");
-  let width = 0;
 
-  setInterval(moveSlider, 6000);
+  setInterval(moveSlider, 5000);
 
   function moveSlider() {
     let currentSlide = parseInt(sliderContainer.data("activeSlide"));
+    let width = $(children[(currentSlide-1)]).outerWidth(true) * -1;
     
-    if (currentSlide == children.length) {
-      sliderContainer.css("transform", `translateX(0px)`);
-      sliderContainer.data("activeSlide", "1");
-      width = 0;
-    } else {
-      width = width + $(children[(currentSlide-1)]).outerWidth(true) * -1;
-      sliderContainer.css("transform", `translateX(${width}px)`);
-      sliderContainer.data("activeSlide", (currentSlide+1).toString());
-    }
-    /*$("#product-slider .slider").css("transform", "translate: ")
-    console.log("Calling moveSlider");*/
+    sliderContainer.css("transition", `transform 1s cubic-bezier(0.65, 0, 0.35, 1)`);
+    sliderContainer.css("transform", `translateX(${width}px)`);
+
+    setTimeout(() => {
+      
+      sliderContainer.css("transition", '');
+
+      if (currentSlide < children.length) {
+        sliderContainer.data("activeSlide", (currentSlide+1)).toString();
+      } else {
+        sliderContainer.data("activeSlide", 1).toString();
+      }
+      
+      if (currentSlide > 1) {
+        sliderContainer.find(`img[data-id=${currentSlide-1}]`).appendTo(sliderContainer);
+      } else {
+        sliderContainer.find(`img[data-id=${children.length}]`).appendTo(sliderContainer);
+      }
+
+      sliderContainer.css("transform", '');
+
+    }, 1000);
   }
 }
 
+
+// Product details expanding
 function expandMenu() {
+  $(".menu-container .menu-list .expand-container").off();
   $(".menu-container .menu-list .expand-container").click(function() {
     
     let listHeight = 0;
