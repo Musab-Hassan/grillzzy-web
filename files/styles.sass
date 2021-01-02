@@ -51,7 +51,7 @@ html,body
         z-index: -1
     h1 
         font-family: "Pastel", sans-serif
-        font-size: 7em
+        font-size: 4.5em
         font-weight: normal
         color: white
         padding-left: 0.8em
@@ -64,7 +64,7 @@ html,body
             left: -1vw !important
 
         h1
-            font-size: 12vw !important
+            font-size: 9vw !important
 
 
 .sub-header
@@ -110,17 +110,14 @@ html,body
 
 .description
     box-sizing: border-box
-    margin-left: 2em
+    padding-left: 2em
     font-family: "Montserrat", sans-serif
     font-size: 1.3em
     line-height: 170%
-    width: 65%
 
 @media screen and (max-width: $min-width)
     .description
-        box-sizing: border-box
-        width: 100%
-        margin: 0 2vw
+        padding: 0 2vw
 
 @media screen and (max-width: 600px)
     .description
@@ -154,12 +151,12 @@ html,body
     .button-wrapper
         .social-btn
             border-radius: 100%
-            padding: 1.2rem
+            padding: 1rem
             background-color: black
             display: inline-block
             margin: 0 0.3rem
-            height: 1.8rem
-            width: 1.8rem
+            height: 1.5rem
+            width: 1.5rem
             cursor: pointer
             transition: 0.3s ease transform
 
@@ -317,14 +314,6 @@ html,body
 
         .header
             margin-bottom: 7vh
-        
-        .delivery-container
-            margin-top: 8em
-
-            img.delivery-service-img
-                display: inline-block
-                height: 2.8em
-                margin: 0 2em
 
         @media screen and (max-width: $min-width)
             .delivery-container
@@ -442,19 +431,6 @@ html,body
                     flex-grow: 1
                         
     .location-container
-        .delivery-container
-            display: block
-
-            img.delivery-service-img
-                    display: inline-block
-                    height: 2.4em
-                    margin: 0 2em
-            @media screen and (max-width: $min-width)
-                
-                img.delivery-service-img
-                    width: 32.5% !important
-                    height: auto !important
-                    margin: auto 0 !important
 
 
 
@@ -490,13 +466,6 @@ html,body
       .item.link
         cursor: pointer
 
-      .item-header
-        font-size: 1.1em
-        color: $c_textLightGray
-        font-family: "Montserrat", sans-serif
-        font-weight: 800
-        line-height: 200%
-
   .notice-container
     margin-top: 5vh
     padding-top: 4vh
@@ -522,9 +491,6 @@ html,body
 
         .item
             font-size: 2.5vw !important
-
-        .item-header
-            font-size: 3vw !important
 
 
 
