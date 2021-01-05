@@ -32,6 +32,10 @@ $(document).ready(function() {
             $([document.documentElement, document.body]).animate({
               scrollTop: $(".document-content .contact-info").offset().top
             }, 800);
+          } else if (e.target.classList.contains("distributer-scroll")) {
+            $([document.documentElement, document.body]).animate({
+              scrollTop: $(".document-content .distributers").offset().top
+            }, 800);
           }
         }
       }
