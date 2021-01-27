@@ -1,4 +1,4 @@
-var SERVER_HOST = "";//window.location.hostname;
+var SERVER_HOST = window.location.hostname;
 
 $(document).ready(function() {
 	// Page navigation
