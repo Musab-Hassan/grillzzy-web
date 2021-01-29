@@ -4,8 +4,8 @@
   src: url(assets/Pastel.woff)
 
 @font-face
-  font-family: Vogo
-  src: url(assets/Voga.woff)
+  font-family: Nexa
+  src: url(assets/Nexa.woff)
 
 $c_backgroundGray: #212121
 $c_textGray: #4E4E4E
@@ -60,56 +60,39 @@ html,body
 	z-index: 1
 	box-sizing: border-box
 	overflow: visible
-	
-	&::before
-		content: ""
-		background-image: url("assets/text-stroke.png")
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 130%
-		height: 170%
-		position: absolute
-		top: -1em
-		left: -6em
-		-moz-transform: scaleX(-1);
-		-o-transform: scaleX(-1);
-		-webkit-transform: scaleX(-1);
-		transform: scaleX(-1);
-		filter: FlipH;
-		-ms-filter: "FlipH";
-		z-index: -1
-
-	h2
-		font-size: 2em
-		font-family: "Montserrat", sans-serif
-		font-weight: bold
-		text-transform: uppercase
-		color: white
-		letter-spacing: 0.05em
-		text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-		line-height: 200%
 
 	h1 
-		font-family: "Voga", sans-serif
-		font-size: 5.5em
+		font-family: "Nexa", sans-serif
+		font-size: 7.5em
 		font-weight: normal
 		text-transform: uppercase
 		color: white
 		letter-spacing: 0.05em
 		box-sizing: border-box
 		text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4)
+		line-height: 120%
+
+		div
+			display: inline-block
+			position: relative
+
+			&:before
+				content: ""
+				background-image: url("assets/text-underline.png")
+				background-position: center
+				background-repeat: no-repeat
+				background-size: 100%
+				width: 100%
+				height: 100%
+				position: absolute
+				bottom: -0.2em
+				left: 0
+				z-index: -1
 
 	@media screen and (max-width: $min-width)
-		&::before
-			top: -4vw !important
-			left: -1vw !important
 
 		h1
 			font-size: 12vw !important
-
-		h2
-			font-size: 5vw !important
 
 
 .sub-header
@@ -156,8 +139,8 @@ html,body
 .description
 	box-sizing: border-box
 	font-family: "Montserrat", sans-serif
-	font-size: 1.3em
-	line-height: 170%
+	font-size: 1.25em
+	line-height: 200%
 
 @media screen and (max-width: $min-width)
 	.description
@@ -173,7 +156,7 @@ html,body
 	font-size: 1.6em
 	text-transform: none
 	font-weight: 300
-	line-height: 150%
+	line-height: 200%
 
 	b
 		font-weight: 600
@@ -185,11 +168,31 @@ html,body
 	text-transform: uppercase
 	font-weight: 700
 
+.header-button
+	font-family: "Montserrat", sans-serif
+	display: inline-block
+	padding: 1em 2em
+	color: white
+	border: 3px solid white
+	background-color: transparent
+	text-transform: uppercase
+	cursor: pointer
+	transition: background-color 0.5s ease, color 0.5s ease
+	-webkit-transition: background-color 0.5s ease, color 0.5s ease
+	font-weight: 600
+	font-size: 1.2em
+	margin-top: 3vh
+	letter-spacing: 0.3em
+
+	&:hover
+		color: $c_textPrimaryRed
+		background-color: white
+
 .button
 	font-family: "Montserrat", sans-serif
 	display: inline-block
 	border-radius: 25px
-	padding: 1em 1.2em
+	padding: 1em 1.1em
 	color: white
 	background-color: #FE4A33
 	text-transform: uppercase
@@ -197,6 +200,9 @@ html,body
 	transition: transform 0.5s ease, box-shadow 0.5s ease
 	-webkit-transition: transform 0.5s ease, box-shadow 0.5s ease
 	font-weight: 600
+	font-size: 1em
+	letter-spacing: 0.08em
+	margin-top: 1em
 
 	&:not(.button)
 		box-shadow: 0px 4px 15px rgba(0,0,0,0.1)
@@ -439,6 +445,10 @@ html,body
 	box-sizing: border-box
 	width: 100%
 
+	@media screen and (max-width: $min-width)
+		width: 100%
+		margin: 0
+
 	img.background
 		position: absolute
 		top: 0
@@ -451,10 +461,11 @@ html,body
 	.back-video
 		position: absolute
 		top: 0
-		height: 108%;
-		width: 177.77777778vh;
-		min-width: 100%;
-		min-height: 56.25vw;
+		left: 0
+		height: 100%
+		width: 100%
+		opacity: 0.5
+		object-fit: cover
 		z-index: 1
 		box-shadow: inset 0 14px 28px rgba(0,0,0,0.25), inset 0 10px 10px rgba(0,0,0,0.22)
 
@@ -464,64 +475,20 @@ html,body
 
 	@media screen and (min-width: $min-width)
 		.title-align-wrapper
-			width: 60% !important
+			width: 80% !important
+
+			&.about
+				width: 60% !important
+				margin-bottom: 3vh
 
 	.title-align-wrapper
 		min-height: 75vh
 		display: flex
 		flex-direction: column
 		justify-content: center
-		padding: 0 5vw
+		padding: 0 8vw
 		box-sizing: border-box
 		margin: auto 0
-
-		.card
-			background-color: white
-			padding: 2vw
-			border-radius: 0.4em
-			box-sizing: border-box
-			width: 100%
-			margin: 2rem 0
-
-			*
-				font-family: "Montserrat", sans-serif
-				font-size: 1.3rem
-				color: $c_textGray
-			
-			.strong-header
-				font-weight: 700
-				text-transform: uppercase
-				padding-bottom: 1rem
-
-			.italic
-				font-style: italic
-				font-weight: 200 !important
-
-			.link-box
-				cursor: pointer
-				border: 1px solid #ccc
-				border-radius: 0.6rem
-				padding: 1.2vw
-				background-color: white
-				font-weight: 500
-				line-height: 150%
-				margin-bottom: 1rem
-			
-				&:hover
-					background-color: #EEEEEE
-
-		.header
-			margin-bottom: 7vh
-
-		@media screen and (max-width: $min-width)
-			.delivery-container
-				position: relative
-				margin-top: 10vh !important
-
-				img.delivery-service-img
-					width: 32.5% !important
-					height: auto !important
-					margin: auto 0 !important
 
 
 // Document content
@@ -631,7 +598,50 @@ html,body
 				.inline-container.text
 					flex-grow: 1
 						
-	.location-container
+	.card
+		background-color: white
+		box-sizing: border-box
+		width: 100%
+
+		*
+			font-family: "Montserrat", sans-serif
+			font-size: 1.3rem
+			color: $c_textGray
+		
+		.strong-header
+			font-weight: 700
+			text-transform: uppercase
+			padding-bottom: 1rem
+
+		.italic
+			font-style: italic
+			font-weight: 200 !important
+
+		.link-box
+			cursor: pointer
+			border: 1px solid #ccc
+			border-radius: 0.6rem
+			padding: 1.2vw
+			background-color: white
+			font-weight: 500
+			line-height: 150%
+			margin-bottom: 1rem
+		
+			&:hover
+				background-color: #EEEEEE
+
+		.header
+			margin-bottom: 7vh
+
+		@media screen and (max-width: $min-width)
+			.delivery-container
+				position: relative
+				margin-top: 10vh !important
+
+				img.delivery-service-img
+					width: 32.5% !important
+					height: auto !important
+					margin: auto 0 !important
 
 
 
