@@ -84,8 +84,13 @@ var loader = {
 		
 		$('img[data-src]').each( function(i, e) {
 			let promise = new Promise((resolve, error) => {
+				$(this).attr("loading", "eager");
 				this.src = $(this).data('src');
 				this.onload = () => {
+					resolve(i);
+				};
+				this.onerror = (e) => {
+					$(this).attr("alt", "Could not load Image");
 					resolve(i);
 				}
 			});
@@ -117,7 +122,7 @@ var loader = {
 function mobileNav() {
 	$("#back-image-container .hb-button").off("click");
 	$("#back-image-container .hb-button").on("click", function() {
-		active = $(this).hasClass("close");
+		let active = $(this).hasClass("close");
 		if (active) {
 			$("#back-image-container .m-nav-container").removeClass("active");
 			$(this).removeClass("close");
