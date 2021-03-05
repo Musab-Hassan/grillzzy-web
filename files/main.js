@@ -1,4 +1,4 @@
-import { SERVER_HOST } from "./environment.js";
+var SERVER_HOST = window.location.host;
 
 $(document).ready(function() {
 	// Page navigation
