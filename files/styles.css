@@ -60,7 +60,7 @@ html, body {
 
 .header h1 {
   font-family: "Nexa", sans-serif;
-  font-size: 7.5em;
+  font-size: 6.8em;
   font-weight: normal;
   text-transform: uppercase;
   color: white;
@@ -155,7 +155,7 @@ html, body {
 
 @media screen and (max-width: 600px) {
   .description {
-    font-size: 4vw;
+    font-size: 3.8vw;
   }
 }
 
@@ -299,7 +299,7 @@ html, body {
 }
 
 .nav-container .vertical-wrapper .brand-icon {
-  width: 10em;
+  height: 4em;
   margin-bottom: 1.5em;
   margin-right: 2em;
   cursor: pointer;
@@ -396,10 +396,11 @@ html, body {
 
 .nav-container .vertical-wrapper .hb-button.close span {
   background-color: white;
+  top: 1vh;
 }
 
 .nav-container .vertical-wrapper .hb-button.close span:nth-child(1) {
-  transform: translateY(1.3vh) rotate(-45deg);
+  transform: translateY(100%) rotate(-45deg);
 }
 
 .nav-container .vertical-wrapper .hb-button.close span:nth-child(2) {
@@ -407,7 +408,7 @@ html, body {
 }
 
 .nav-container .vertical-wrapper .hb-button.close span:nth-child(3) {
-  transform: translateY(-1.3vh) rotate(45deg);
+  transform: translateY(-100%) rotate(45deg);
 }
 
 @media screen and (max-width: 930px) {
@@ -433,19 +434,21 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
+  padding-top: 0;
   box-sizing: border-box;
-  height: 0;
+  max-height: 0;
   background-color: #FE4A33;
   border-radius: 0 0 10px 10px;
   box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.2);
   z-index: 8 !important;
   overflow: hidden;
-  transition: height 0.7s cubic-bezier(0.76, 0, 0.24, 1);
-  -webkit-transition: height 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
+  -webkit-transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .m-nav-container.active {
-  height: 50vh;
+  max-height: 100%;
+  padding-top: calc( 5vh + 4.5em);
 }
 
 .m-nav-container ul {
@@ -711,7 +714,7 @@ html, body {
 
 #footer-container {
   width: 100%;
-  padding: 10vh;
+  padding: 10vh 8vw;
   background-color: #212121;
   box-sizing: border-box;
 }
@@ -731,12 +734,12 @@ html, body {
 }
 
 #footer-container .inline-container .footer-logo {
-  height: 10vh;
+  height: 4.5em;
   width: auto;
 }
 
 #footer-container .inline-container .footer-adj-logo {
-  height: 5vh;
+  height: 2em;
   width: auto;
 }
 
@@ -761,7 +764,7 @@ html, body {
 #footer-container .notice-container .notice {
   text-transform: uppercase;
   color: #616161;
-  font-size: 1.3vh;
+  font-size: 0.7em;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 150%;

@@ -63,7 +63,7 @@ html,body
 
 	h1 
 		font-family: "Nexa", sans-serif
-		font-size: 7.5em
+		font-size: 6.8em
 		font-weight: normal
 		text-transform: uppercase
 		color: white
@@ -148,7 +148,7 @@ html,body
 
 @media screen and (max-width: 600px)
 	.description
-		font-size: 4vw
+		font-size: 3.8vw
 
 .paragraph
 	font-family: "Montserrat", sans-serif
@@ -283,7 +283,7 @@ html,body
 		margin: auto 0
 			
 		.brand-icon
-			width: 10em
+			height: 4em
 			margin-bottom: 1.5em
 			margin-right: 2em
 			cursor: pointer
@@ -367,15 +367,16 @@ html,body
 			&.close
 				span
 					background-color: white
+					top: 1vh
 
 					&:nth-child(1)
-						transform: translateY(1.3vh) rotate(-45deg)
+						transform: translateY(100%) rotate(-45deg)
 
 					&:nth-child(2)
 						width: 0
 
 					&:nth-child(3)
-						transform: translateY(-1.3vh) rotate(45deg)
+						transform: translateY(-100%) rotate(45deg)
 
 @media screen and (max-width: 930px)
 	.nav-container
@@ -399,18 +400,20 @@ html,body
 	top: 0
 	left: 0
 	width: 100%
+	padding-top: 0
 	box-sizing: border-box
-	height: 0
+	max-height: 0
 	background-color: $c_textPrimaryRed
 	border-radius: 0 0 10px 10px
 	box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.2);
 	z-index: 8 !important
 	overflow: hidden
-	transition: height 0.7s cubic-bezier(0.76, 0, 0.24, 1)
-	-webkit-transition: height 0.7s cubic-bezier(0.76, 0, 0.24, 1)
+	transition: 1s cubic-bezier(0.76, 0, 0.24, 1)
+	-webkit-transition: 1s cubic-bezier(0.76, 0, 0.24, 1)
 
 	&.active
-		height: 50vh
+		max-height: 100%
+		padding-top: calc( 5vh + 4.5em )
 
 	ul
 		list-style-type: none
@@ -649,7 +652,7 @@ html,body
 
 #footer-container
 	width: 100%
-	padding: 10vh
+	padding: 10vh 8vw
 	background-color: $c_backgroundGray
 	box-sizing: border-box
 
@@ -665,11 +668,11 @@ html,body
 			text-transform: uppercase
 
 		.footer-logo
-			height: 10vh
+			height: 4.5em
 			width: auto
 
 		.footer-adj-logo
-			height: 5vh
+			height: 2em
 			width: auto
 
 		.item
@@ -690,7 +693,7 @@ html,body
 		.notice
 			text-transform: uppercase
 			color: $c_textLightGray
-			font-size: 1.3vh
+			font-size: 0.7em
 			font-family: "Montserrat", sans-serif
 			font-weight: 400
 			line-height: 150%
